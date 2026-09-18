@@ -3,6 +3,9 @@ from pathlib import Path
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from embeddings import get_embedding_model
+from vector_store import create_vector_store
+
+
 
 # --------------------------------------------------
 # 1. Define the folder containing our PDFs
@@ -132,3 +135,14 @@ print(f"Number of chunks: {len(chunks)}")
 print(f"Number of vectors: {len(vectors)}")
 print(f"Vector dimensions: {len(vectors[0])}")
 print(f"First 5 values: {vectors[0][:5]}")
+
+# --------------------------------------------------
+# 9. Store chunks in ChromaDB
+# --------------------------------------------------
+
+print("\n--- CHROMADB ---")
+
+vector_store = create_vector_store(chunks)
+
+print("ChromaDB created successfully.")
+print(f"Stored chunks: {vector_store._collection.count()}")
