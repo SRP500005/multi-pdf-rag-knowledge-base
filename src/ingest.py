@@ -2,7 +2,7 @@ from pathlib import Path
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-
+from embeddings import get_embedding_model
 
 # --------------------------------------------------
 # 1. Define the folder containing our PDFs
@@ -111,3 +111,24 @@ for index, chunk in enumerate(chunks[:5]):
     print(chunk.page_content[:200])
 
     print("-" * 50)
+    
+    # --------------------------------------------------
+# 8. Create embeddings for all chunks
+# --------------------------------------------------
+
+embedding_model = get_embedding_model()
+
+chunk_texts = [
+    chunk.page_content
+    for chunk in chunks
+]
+
+vectors = embedding_model.embed_documents(chunk_texts)
+
+
+print("\n--- EMBEDDINGS ---")
+
+print(f"Number of chunks: {len(chunks)}")
+print(f"Number of vectors: {len(vectors)}")
+print(f"Vector dimensions: {len(vectors[0])}")
+print(f"First 5 values: {vectors[0][:5]}")
