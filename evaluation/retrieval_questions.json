@@ -1,0 +1,38 @@
+[
+  {
+    "question": "What is retrieval-augmented generation?",
+    "expected_source": "01_RAG_Fundamentals.pdf"
+  },
+  {
+    "question": "What are the main components of a RAG system?",
+    "expected_source": "01_RAG_Fundamentals.pdf"
+  },
+  {
+    "question": "Why should a grounded answer include citations?",
+    "expected_source": "01_RAG_Fundamentals.pdf"
+  },
+  {
+    "question": "What is a document chunk?",
+    "expected_source": "02_RAG_Chunking_and_Retrieval.pdf"
+  },
+  {
+    "question": "Why is chunk overlap important?",
+    "expected_source": "02_RAG_Chunking_and_Retrieval.pdf"
+  },
+  {
+    "question": "How should chunk size be selected?",
+    "expected_source": "02_RAG_Chunking_and_Retrieval.pdf"
+  },
+  {
+    "question": "How should a RAG system be evaluated?",
+    "expected_source": "03_RAG_Evaluation_and_Troubleshooting.pdf"
+  },
+  {
+    "question": "How can retrieval and generation failures be diagnosed separately?",
+    "expected_source": "03_RAG_Evaluation_and_Troubleshooting.pdf"
+  },
+  {
+    "question": "What should a RAG system do when the retrieved evidence is insufficient?",
+    "expected_source": "03_RAG_Evaluation_and_Troubleshooting.pdf"
+  }
+]
